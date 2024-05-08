@@ -1,7 +1,10 @@
 export default function Editor({ label, value, onChange }) {
   return (
-    <>
-    <h2>{label}</h2>
+    <div className="editor">
+    <b>
+      <label htmlFor="input">{label}: </label>
+    </b>
+    
 
     <input 
       type="text" 
@@ -9,6 +12,6 @@ export default function Editor({ label, value, onChange }) {
       onChange={onChange}
     />
     
-    </>
+    </div>
   );
 }
