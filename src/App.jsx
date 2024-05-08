@@ -21,7 +21,7 @@ function App() {
 
       <div>
         <h1>CV Displayer</h1>
-        <Displayer></Displayer>
+        <Displayer name={name}></Displayer>
         
       </div>
 
