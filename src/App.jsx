@@ -23,6 +23,7 @@ function App() {
   }
 
 
+  
 //education data
 const [edu, setEdu] = useState([{
   school:   "University of Whatever",
@@ -41,7 +42,15 @@ function handleEduChange (e, index, changedProp) {
 }
 
   function addEduItem () {
-
+    const newEdu = [...edu];
+    newEdu.push({
+      school:   "U of T",
+      location: "Toronto",
+      start:    "Jan 2020",
+      end:      "Apr 2024",
+      major:    "Computer Science"
+    });
+    setEdu(newEdu);
   }
   
 
