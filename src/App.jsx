@@ -4,6 +4,8 @@ import './App.css'
 import Editor from './components/editor'
 import Displayer from './components/displayer';
 
+import Education from './components/education';
+
 function App() {
   const [name, setName] = useState('Initial');
   function handleNameChange (e) {
@@ -16,7 +18,7 @@ function App() {
   }
 
   const [phone, setPhone] = useState("555 555-5555")
-  function handlePhoneChange () {
+  function handlePhoneChange (e) {
     setPhone(e.target.value);
   }
 
@@ -33,6 +35,7 @@ function App() {
 
         <div>
           <h2>Education</h2>
+          {/* <Education /> */}
         </div>
 
         <div>
