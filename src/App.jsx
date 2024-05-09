@@ -5,6 +5,7 @@ import Editor from './components/editor'
 import Displayer from './components/displayer';
 
 import Education from './components/education';
+import PersonalData from './components/personalData';
 
 function App() {
   
@@ -27,23 +28,7 @@ function App() {
         <h1>Editor</h1>
         <div>
           <h2>Personal Info</h2>
-          <Editor 
-            label="Name" 
-            value={person.name} 
-            onChange={(e) => handlePersonChange(e, "name")} 
-          />
-
-          <Editor 
-            label="Email" 
-            value={person.email} 
-            onChange={(e) => handlePersonChange(e, "email")} 
-          />
-
-          <Editor 
-            label="Phone" 
-            value={person.phone} 
-            onChange={(e) => handlePersonChange(e, "phone")} 
-          />
+          <PersonalData person={person} handlePersonChange={handlePersonChange} />
         </div>
 
         <div>
