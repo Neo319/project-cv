@@ -7,20 +7,19 @@ import Displayer from './components/displayer';
 import Education from './components/education';
 
 function App() {
-  const [name, setName] = useState('Initial');
-  function handleNameChange (e) {
-    setName(e.target.value);
-  }
+  
+//personal data
+  const [person, setPerson] = useState({
+    name: "John Doe",
+    email: "jd@fakemail.com",
+    phone: "555 555-5555"
+  })
 
-  const [email, setEmail] = useState("initial@fakemail.net")
-  function handleEmailChange (e) {
-    setEmail(e.target.value);
+  function handlePersonChange (e, changedProp) {
+    const newPerson = {...person, [changedProp]: e.target.value};
+    setPerson(newPerson);
   }
-
-  const [phone, setPhone] = useState("555 555-5555")
-  function handlePhoneChange (e) {
-    setPhone(e.target.value);
-  }
+  
 
   return (
     <>
@@ -28,9 +27,23 @@ function App() {
         <h1>Editor</h1>
         <div>
           <h2>Personal Info</h2>
-          <Editor label="Name" value={name} onChange={handleNameChange} />
-          <Editor label="Email" value={email} onChange={handleEmailChange} />
-          <Editor label="Phone" value={phone} onChange={handlePhoneChange} />
+          <Editor 
+            label="Name" 
+            value={person.name} 
+            onChange={(e) => handlePersonChange(e, "name")} 
+          />
+
+          <Editor 
+            label="Email" 
+            value={person.email} 
+            onChange={(e) => handlePersonChange(e, "email")} 
+          />
+
+          <Editor 
+            label="Phone" 
+            value={person.phone} 
+            onChange={(e) => handlePersonChange(e, "phone")} 
+          />
         </div>
 
         <div>
@@ -46,9 +59,9 @@ function App() {
       <div>
         <h1>CV Displayer</h1>
         <Displayer 
-          name={name} 
-          email={email} 
-          phone={phone}
+          name={person.name} 
+          email={person.email} 
+          phone={person.phone}
         
         />
 
