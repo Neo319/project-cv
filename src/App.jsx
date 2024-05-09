@@ -16,9 +16,32 @@ function App() {
     phone: "555 555-5555"
   })
 
+  // how personal data entries are changed
   function handlePersonChange (e, changedProp) {
     const newPerson = {...person, [changedProp]: e.target.value};
     setPerson(newPerson);
+  }
+
+
+//education data
+const [edu, setEdu] = useState([{
+  school:   "University of Whatever",
+  location: "Antarctica",
+  start:    "Jan 2008",
+  end:      "Feb 2013",
+  major:    "Astrophysics"
+}]);
+
+// how education entries are changed (indexed in array)
+function handleEduChange (e, index, changedProp) {
+  const newEdu = [...edu];
+  newEdu[index] = {...newEdu[index], [changedProp]: e.target.value};
+  setEdu(newEdu);
+
+}
+
+  function addEduItem () {
+
   }
   
 
@@ -34,6 +57,7 @@ function App() {
         <div>
           <h2>Education</h2>
           {/* <Education /> */}
+          <button onClick={addEduItem}>+Education</button>
         </div>
 
         <div>
@@ -44,9 +68,8 @@ function App() {
       <div>
         <h1>CV Displayer</h1>
         <Displayer 
-          name={person.name} 
-          email={person.email} 
-          phone={person.phone}
+          person={person}
+          edu={edu}
         
         />
 
