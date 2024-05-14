@@ -9,8 +9,6 @@ function EduDisplay () {
 
 //function which returns the rendered eduItem
 function EduItem ({ item }) {
-  console.log(item)
-  console.log(item.school)
   return (
     <>
       <div>school is: {item.school}</div>

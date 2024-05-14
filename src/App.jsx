@@ -35,9 +35,13 @@ const [edu, setEdu] = useState([{
 
 // how education entries are changed (indexed in array)
 function handleEduChange (e, index, changedProp) {
+  console.log(changedProp)
+  console.log(index)
   const newEdu = [...edu];
   newEdu[index] = {...newEdu[index], [changedProp]: e.target.value};
+  
   setEdu(newEdu);
+
 
 }
 
@@ -65,7 +69,7 @@ function handleEduChange (e, index, changedProp) {
 
         <div>
           <h2>Education</h2>
-          {/* <Education /> */}
+          <Education edu={edu} handleEduChange={handleEduChange}/>
           <button onClick={addEduItem}>+Education</button>
         </div>
 
