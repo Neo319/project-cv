@@ -14,12 +14,6 @@ function App() {
     phone: "555 555-5555",
   });
 
-  // how personal data entries are changed
-  function handlePersonChange(e, changedProp) {
-    const newPerson = { ...person, [changedProp]: e.target.value };
-    setPerson(newPerson);
-  }
-
   //education data
   const [edu, setEdu] = useState([
     {
@@ -31,14 +25,22 @@ function App() {
     },
   ]);
 
+  // how personal data entries are changed
+  function handlePersonChange(e, changedProp) {
+    const newPerson = { ...person, [changedProp]: e.target.value };
+    setPerson(newPerson);
+  }
+
   // how education entries are changed (indexed in array)
   function handleEduChange(e, index, changedProp) {
-    console.log(changedProp);
-    console.log(index);
     const newEdu = [...edu];
     newEdu[index] = { ...newEdu[index], [changedProp]: e.target.value };
 
     setEdu(newEdu);
+
+    // -----------------------------------------------
+    // the edu item entry gets unfocused here!!!
+    // because : all edu components are rerendered when the array is updated...
   }
 
   function addEduItem() {

@@ -14,8 +14,6 @@ export default function Education({ edu, handleEduChange }) {
 
   //function which returns the rendered eduItem
   function EduItem({ item, index }) {
-    console.log(index);
-
     const handleItemChange = (e, changedProp) => {
       //calling the parent handleEduChange function with the appropriate parameters
       handleEduChange(e, index, changedProp);
