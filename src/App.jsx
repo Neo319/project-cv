@@ -52,7 +52,7 @@ function App() {
     <>
       <div className="container">
         <div className="editor">
-          <h1>Editor</h1>
+          <h1>CV Editor</h1>
 
           <h2>Personal Info</h2>
           <PersonalData
@@ -68,7 +68,7 @@ function App() {
           />
         </div>
         <div className="displayer">
-          <h1>CV Displayer</h1>
+          <h1>{person.name}</h1>
           <Displayer person={person} edu={edu} experience={experience} />
         </div>
       </div>

@@ -4,15 +4,15 @@ export default function Displayer({ person, edu, experience }) {
   return (
     <>
       <div>
+        <h3> -- Contact -- </h3>
         <ul>
-          <li>{person.name}</li>
           <li>{person.email}</li>
           <li>{person.phone}</li>
         </ul>
       </div>
 
       <div>
-        <h3>Education</h3>
+        <h3> -- Education --</h3>
         <ul>
           <li>Attended {edu.school} </li>
           <li>Located in {edu.location}</li>
@@ -24,6 +24,7 @@ export default function Displayer({ person, edu, experience }) {
       </div>
 
       <div>
+        <h3> -- Experience -- </h3>
         <ul>
           <li>Worked at {experience.company}</li>
           <li>as {experience.role} </li>

@@ -70,6 +70,19 @@ ul {
   list-style: none;
 }
 
+.displayer {
+  font-size: 0.8em;
+}
+
+.displayer div {
+  border-bottom: 3px dotted #646cffaa;
+  text-align: right;
+}
+
+.displayer h1 {
+  border-bottom: 3px dotted #646cffaa;
+}
+
 /* declarations for mobile */
 
 @media only screen and (max-width: 700px) {
