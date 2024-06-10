@@ -15,15 +15,13 @@ function App() {
   });
 
   //education data
-  const [edu, setEdu] = useState([
-    {
-      school: "University of Whatever",
-      location: "Antarctica",
-      start: "Jan 2008",
-      end: "Feb 2013",
-      major: "Astrophysics",
-    },
-  ]);
+  const [edu, setEdu] = useState({
+    school: "University of Whatever",
+    location: "Antarctica",
+    start: "Jan 2008",
+    end: "Feb 2013",
+    major: "Astrophysics",
+  });
 
   // how personal data entries are changed
   function handlePersonChange(e, changedProp) {
@@ -32,26 +30,9 @@ function App() {
   }
 
   // how education entries are changed (indexed in array)
-  function handleEduChange(e, index, changedProp) {
-    const newEdu = [...edu];
-    newEdu[index] = { ...newEdu[index], [changedProp]: e.target.value };
+  function handleEduChange(e, changedProp) {
+    const newEdu = { ...edu, [changedProp]: e.target.value };
 
-    setEdu(newEdu);
-
-    // -----------------------------------------------
-    // the edu item entry gets unfocused here!!!
-    // because : all edu components are rerendered when the array is updated...
-  }
-
-  function addEduItem() {
-    const newEdu = [...edu];
-    newEdu.push({
-      school: "U of T",
-      location: "Toronto",
-      start: "Jan 2020",
-      end: "Apr 2024",
-      major: "Computer Science",
-    });
     setEdu(newEdu);
   }
 
@@ -66,7 +47,6 @@ function App() {
       <div>
         <h2>Education</h2>
         <Education edu={edu} handleEduChange={handleEduChange} />
-        <button onClick={addEduItem}>+Education</button>
       </div>
 
       <div>
