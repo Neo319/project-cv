@@ -50,25 +50,27 @@ function App() {
 
   return (
     <>
-      <h1>Editor</h1>
-      <div>
-        <h2>Personal Info</h2>
-        <PersonalData person={person} handlePersonChange={handlePersonChange} />
-      </div>
+      <div className="container">
+        <div className="editor">
+          <h1>Editor</h1>
 
-      <div>
-        <h2>Education</h2>
-        <Education edu={edu} handleEduChange={handleEduChange} />
-      </div>
-
-      <div>
-        <h2>Experience</h2>
-        <Experience experience={experience} handleExpChange={handleExpChange} />
-      </div>
-
-      <div>
-        <h1>CV Displayer</h1>
-        <Displayer person={person} edu={edu} experience={experience} />
+          <h2>Personal Info</h2>
+          <PersonalData
+            person={person}
+            handlePersonChange={handlePersonChange}
+          />
+          <h2>Education</h2>
+          <Education edu={edu} handleEduChange={handleEduChange} />
+          <h2>Experience</h2>
+          <Experience
+            experience={experience}
+            handleExpChange={handleExpChange}
+          />
+        </div>
+        <div className="displayer">
+          <h1>CV Displayer</h1>
+          <Displayer person={person} edu={edu} experience={experience} />
+        </div>
       </div>
     </>
   );
