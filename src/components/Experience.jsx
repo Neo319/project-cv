@@ -9,7 +9,7 @@ export default function Experience({ experience, handleExpChange }) {
           <Editor
             label="Company"
             value={experience.company}
-            onChange={(e) => handleExpChange(e, "school")}
+            onChange={(e) => handleExpChange(e, "company")}
           />
         </li>
         <li>
