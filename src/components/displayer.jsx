@@ -1,8 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function Displayer({ person, edu }) {
-  // function which maps edu array, calling eduItem for each item in array
-
+export default function Displayer({ person, edu, experience }) {
   return (
     <>
       <div>
@@ -24,6 +22,14 @@ export default function Displayer({ person, edu }) {
           <li>Majoring in {edu.major} </li>
         </ul>
       </div>
+
+      <div>
+        <ul>
+          <li>Worked at {experience.company}</li>
+          <li>as {experience.role} </li>
+          <li>for {experience.years} years</li>
+        </ul>
+      </div>
     </>
   );
 }
@@ -31,4 +37,5 @@ export default function Displayer({ person, edu }) {
 Displayer.propTypes = {
   person: PropTypes.object.isRequired,
   edu: PropTypes.object.isRequired,
+  experience: PropTypes.object.isRequired,
 };

@@ -5,6 +5,7 @@ import Displayer from "./components/displayer";
 
 import Education from "./components/education";
 import PersonalData from "./components/personalData";
+import Experience from "./components/Experience";
 
 function App() {
   //personal data
@@ -23,6 +24,12 @@ function App() {
     major: "Astrophysics",
   });
 
+  const [experience, setExperience] = useState({
+    company: "Google",
+    role: "CEO",
+    years: "10",
+  });
+
   // how personal data entries are changed
   function handlePersonChange(e, changedProp) {
     const newPerson = { ...person, [changedProp]: e.target.value };
@@ -34,6 +41,11 @@ function App() {
     const newEdu = { ...edu, [changedProp]: e.target.value };
 
     setEdu(newEdu);
+  }
+
+  function handleExpChange(e, changedProp) {
+    const newExperience = { ...experience, [changedProp]: e.target.value };
+    setExperience(newExperience);
   }
 
   return (
@@ -51,11 +63,12 @@ function App() {
 
       <div>
         <h2>Experience</h2>
+        <Experience experience={experience} handleExpChange={handleExpChange} />
       </div>
 
       <div>
         <h1>CV Displayer</h1>
-        <Displayer person={person} edu={edu} />
+        <Displayer person={person} edu={edu} experience={experience} />
       </div>
     </>
   );
