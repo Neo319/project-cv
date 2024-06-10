@@ -69,3 +69,11 @@
 ul {
   list-style: none;
 }
+
+/* declarations for mobile */
+
+@media only screen and (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+}
